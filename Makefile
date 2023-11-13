@@ -1,5 +1,9 @@
 install:
 	#install commands
+	
+	pip install -r requirements.txt
+unistall:
+	pip uninstall -r requirements.txt
 format:
 	#format code
 lint:
