@@ -28,6 +28,3 @@ jobs:
             - name: Build container
               run: |
                   make build
-            - name: Push container
-              run: |
-                  make push
