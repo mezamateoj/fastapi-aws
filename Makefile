@@ -22,4 +22,8 @@ run:
 	docker run -p 127.0.0.1:8080:8080 mezamateoj/wikifast
 deploy:
 	#deploy
+	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 188288001838.dkr.ecr.us-east-1.amazonaws.com
+	docker build -t wikifast .
+	docker tag wikifast:latest 188288001838.dkr.ecr.us-east-1.amazonaws.com/wikifast:latest
+	docker push 188288001838.dkr.ecr.us-east-1.amazonaws.com/wikifast:latest
 all: install lint test deploy
