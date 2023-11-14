@@ -10,7 +10,7 @@ lint:
 	
 test:
 	#tests
-	python -m pytest -vv  test.py
+	python -m pytest -vv  test.py test_main.py
 build:
 	#build container
 deploy:
