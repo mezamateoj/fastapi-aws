@@ -20,7 +20,7 @@ async def search(value: str):
 
 
 @app.get("/article/{title}")
-async def article(title: str):
+async def get_article(title: str):
     """Search an article on wikipedia based on title"""
 
     article = wiki(title)
