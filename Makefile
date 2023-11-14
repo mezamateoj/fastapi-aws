@@ -1,6 +1,8 @@
 install:
 	#install commands
 	pip install -r requirements.txt
+post-install:
+	python -m textblob.download_corpora
 format:
 	# starting formating of the code...
 	black *.py my_lib/*.py
@@ -26,4 +28,4 @@ deploy:
 	docker build -t wikifast .
 	docker tag wikifast:latest 188288001838.dkr.ecr.us-east-1.amazonaws.com/wikifast:latest
 	docker push 188288001838.dkr.ecr.us-east-1.amazonaws.com/wikifast:latest
-all: install lint test deploy
+all: install post-install lint test deploy
