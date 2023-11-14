@@ -10,6 +10,9 @@ lint:
 	
 test:
 	#tests
+	python -m pytest -vv  test.py
+build:
+	#build container
 deploy:
 	#deploy
 all: install lint test deploy
