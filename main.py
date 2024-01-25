@@ -30,7 +30,7 @@ async def get_article(title: str):
 @app.get("/summary/{title}")
 async def get_phrases(title: str):
     """Search an article on wikipedia based on title
-    returns: all the phrases on the article and the article
+    returns: all the phrases on the article and the artic
     """
 
     article_phrases = phrase(title)
