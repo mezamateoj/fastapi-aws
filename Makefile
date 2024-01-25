@@ -17,8 +17,7 @@ build:
 	#build container
 	docker build -t mezamateoj/wikifast .
 push:
-	# push the image to docker hub
-	    # log in to Docker Hub
+	# log in to Docker Hub and push the image to docker hub
     echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
 	docker push mezamateoj/wikifast
 run:
