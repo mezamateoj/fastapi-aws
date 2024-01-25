@@ -26,11 +26,12 @@ jobs:
               run: |
                   make format
             - name: Build container
-              run: |
-                  make build
+              run: make build
             - name: Push Container
-              run: | 
-                  make push
+              run: make push
+              env:
+                DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+                DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
             - name: Deploy Container
               run: | 
                   make deploy
